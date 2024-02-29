@@ -23,22 +23,22 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-export default function AutoGrid() {
+export default function Footer() {
   return (
-    <Grid container spacing={2}>
+    <Grid container>
       <Grid item sm={12} md={6}>
         <List>
           <ListItemButton alignItems="center">
             <MailIcon></MailIcon>
-            <ListItemText primary="Sent mail" sx={{ pl: 1 }} />
+            <ListItemText primary="Sent mail" />
           </ListItemButton>
           <ListItemButton alignItems="center">
             <Instagram></Instagram>
-            <ListItemText primary="Instagram" sx={{ pl: 1 }} />
+            <ListItemText primary="Instagram" />
           </ListItemButton>
           <ListItemButton alignItems="center">
             <WhatsApp></WhatsApp>
-            <ListItemText primary="WhatsApp" sx={{ pl: 1 }} />
+            <ListItemText primary="WhatsApp"/>
           </ListItemButton>
         </List>
       </Grid>
