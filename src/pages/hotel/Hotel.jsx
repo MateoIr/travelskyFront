@@ -75,6 +75,7 @@ export const Hotel = () => {
           </Grid>
         </Grid>
       </Container>
+      <Footer/>
     </>
   );
 };

@@ -43,15 +43,21 @@ export default function Footer() {
         </List>
       </Grid>
       <Grid item sm={12} md={6}>
-        <typography variant="h6">
-          <ul>
-            <li>Contacto</li>
-            <li>mail</li>
-            <li>instagram</li>
-            <li>Whatsapp</li>
-            <li>Direccion</li>
-          </ul>
-        </typography>
+      <List>
+          <ListItemButton alignItems="center">
+            <MailIcon></MailIcon>
+            <ListItemText primary="Contacto" />
+          </ListItemButton>
+          <ListItemButton alignItems="center">
+            <Instagram></Instagram>
+            <ListItemText primary="mail" />
+          </ListItemButton>
+          <ListItemButton alignItems="center">
+            <WhatsApp></WhatsApp>
+            <ListItemText primary="instagram"/>
+          </ListItemButton>
+        </List>
+        
       </Grid>
     </Grid>
   );

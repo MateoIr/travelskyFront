@@ -5,6 +5,8 @@ import { Home } from "./pages/home/Home";
 import { HotelList } from "./pages/list/HotelList";
 import { Hotel } from "./pages/hotel/Hotel";
 import { Container } from "@mui/material";
+import UserCreate from "./pages/user/userCreate/UserCreate";
+import UserLogin from "./pages/user/userLogim/UserLogin";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/hotels" element={<HotelList />} />
           <Route path="/hotels/:id" element={<Hotel />} />
+          <Route path="/user/create" element={<UserCreate />} />
+          <Route path="/user/login" element={<UserLogin />} />
         </Routes>
       </BrowserRouter>
   );
