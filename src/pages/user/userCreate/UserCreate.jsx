@@ -1,38 +1,34 @@
 import { Box, Button, Container, TextField, Typography } from "@mui/material";
 import React from "react";
 import { useForm } from "react-hook-form";
-import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-
+import userValidationYup from "../../../hooks/userValidationYup";
 const UserCreate = () => {
-  const schema = yup.object().shape({
-    fullName: yup.string().required("Debe ingresar un valor"),
-    email: yup
-      .string()
-      .email("Debe ser un email")
-      .required("Debe ingresar un valor"),
-    password: yup
-      .string()
-      .min(4, "Debe tener minimo 4 caracteres")
-      .max(20, "Debe tener minimo 20 caracteres")
-      .required("Debe ingresar un valor"),
-    password: yup.string().min(4,"Debe tener como minimo 4 letras").max(20,"Debe tener como maximo 4 letras").required("Debe ingresar un valor"),
-    confirmPassword: yup
-      .string()
-      .oneOf([yup.ref("password"), null], "passwords must be the same"),
-  });
-
+ 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(userValidationYup()),
   });
 
   const onSubmit = (data) => {
-    
-    console.log(data);
+    const person = {
+      dni: data.dni,
+      last_name: data.name,
+      birthdate: data.birthdate,
+      address: data.address,
+      nationality: data.nationality,
+
+      user: {
+        u_name: data.user_name,
+        u_contrasena: data.password,
+        u_email: data.email,
+        u_celular: data.phone,
+      },
+    };
+    console.log(person);
   };
   return (
     <Container
@@ -57,15 +53,86 @@ const UserCreate = () => {
       >
         <Typography variant="h5">Registrar</Typography>
         <TextField
-          id="fullName"
+          id="name"
           label="Nombre"
           variant="standard"
           fullWidth
           type="text"
-          {...register("fullName")}
-          error={errors.fullName?.message}
+          {...register("name")}
+          error={errors.name?.message}
         />
-        <Typography textAlign={"center"}>{errors.fullName?.message}</Typography>
+        <Typography textAlign={"center"}>{errors.name?.message}</Typography>
+
+        <TextField
+          id="last_name"
+          label="Apellido"
+          variant="standard"
+          fullWidth
+          type="text"
+          {...register("last_name")}
+          error={errors.last_name?.message}
+        />
+        <Typography textAlign={"center"}>
+          {errors.last_name?.message}
+        </Typography>
+
+        <TextField
+          id="user_name"
+          label="Nombre de usuario"
+          variant="standard"
+          fullWidth
+          type="text"
+          {...register("user_name")}
+          error={errors.user_name?.message}
+        />
+        <Typography textAlign={"center"}>
+          {errors.user_name?.message}
+        </Typography>
+
+        <TextField
+          id="dni"
+          label="DNI"
+          variant="standard"
+          fullWidth
+          type="text"
+          {...register("dni")}
+          error={errors.dni?.message}
+        />
+        <Typography textAlign={"center"}>{errors.dni?.message}</Typography>
+
+        <TextField
+          id="phone"
+          label="Teléfono"
+          variant="standard"
+          fullWidth
+          type="text"
+          {...register("phone")}
+          error={errors.phone?.message}
+        />
+        <Typography textAlign={"center"}>{errors.phone?.message}</Typography>
+
+        <TextField
+          id="address"
+          label="Direccion"
+          variant="standard"
+          fullWidth
+          type="text"
+          {...register("address")}
+          error={errors.address?.message}
+        />
+        <Typography textAlign={"center"}>{errors.address?.message}</Typography>
+        <TextField
+          id="nationality"
+          label="Nacionalidad"
+          type="text"
+          variant="standard"
+          {...register("nationality")}
+          error={errors.nationality?.message}
+        />
+        <Typography textAlign={"center"}>
+          {errors.nationality?.message}
+        </Typography>
+
         <TextField
           id="email"
           label="Email"
@@ -97,7 +164,31 @@ const UserCreate = () => {
         <Typography textAlign={"center"}>
           {errors.confirmPassword?.message}
         </Typography>
-        <Button variant="contained" type="submit" sx={{ maxWidth: 300, mt: 4, color:"white",backgroundColor:"#ddabab"}}>
+
+        <Typography textAlign={"left"} sx={{ mt: 2 }}>
+          Fecha de nacimineto
+        </Typography>
+        <TextField
+          id="birthdate"
+          name="birthdate"
+          placeholder="mm dd aaaa"
+          {...register("birthdate")}
+          error={errors.birthdate?.message}
+          sx={{ m: 1, width: 260 }}
+        />
+        <Typography textAlign={"center"}>
+          {errors.birthdate?.message}
+        </Typography>
+        <Button
+          variant="contained"
+          type="submit"
+          sx={{
+            maxWidth: 300,
+            mt: 4,
+            color: "white",
+            backgroundColor: "#ddabab",
+          }}
+        >
           Crear
         </Button>
       </Box>

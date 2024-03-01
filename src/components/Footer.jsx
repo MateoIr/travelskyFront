@@ -25,7 +25,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function Footer() {
   return (
-    <Grid container>
+    <Grid container sx={{backgroundColor:"#ddabab",mt:5}}>
       <Grid item sm={12} md={6}>
         <List>
           <ListItemButton alignItems="center">

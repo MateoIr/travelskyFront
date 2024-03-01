@@ -40,8 +40,8 @@ function Header() {
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
+    <AppBar position="static" sx={{backgroundColor:"#ddabab"}}>
+      <Container maxWidth="xl" >
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
@@ -69,7 +69,7 @@ function Header() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color="#ddabab"
             >
               <MenuIcon />
             </IconButton>
@@ -128,15 +128,14 @@ function Header() {
               </Button>
             ))}
           </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+          <Box sx={{ flexGrow: 0 }} >
+            <Tooltip title="Open settings" sx={{display:"flex",alignItems:"center",justifyContent:"center", flexFlow:"row"}}>
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0,width:40}}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
             <Menu
-              sx={{ mt: "45px" }}
+              sx={{ mt: "55px" }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
