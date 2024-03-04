@@ -10,15 +10,16 @@ import UserLogin from "./pages/user/userLogin/UserLogin";
 
 function App() {
   return (
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/hotels" element={<HotelList />} />
-          <Route path="/hotels/:id" element={<Hotel />} />
-          <Route path="/user/create" element={<UserCreate />} />
-          <Route path="/user/login" element={<UserLogin />} />
-        </Routes>
-      </BrowserRouter>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<h1>Login</h1>} />
+        <Route path="/hotels" element={<HotelList />} />
+        <Route path="/hotels/:id" element={<Hotel />} />
+        <Route path="/user/create" element={<UserCreate />} />
+        <Route path="/user/login" element={<UserLogin />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
