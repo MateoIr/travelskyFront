@@ -32,7 +32,7 @@ export default function Card2({ info }) {
         sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
       ></CardActions>
       <Button size="large" sx={{ pr: 3 }}>
-        <Link to={`/hotels/${info.id}`}>
+        <Link to={`/service/hotels/${info.id}`}>
         Learn More
         </Link>
       </Button>
