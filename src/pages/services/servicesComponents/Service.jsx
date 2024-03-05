@@ -1,12 +1,10 @@
-import React from "react";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+
+import Header from "../../../components/Header";
+import Footer from "../../../components/Footer";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import SendIcon from "@mui/icons-material/Send";
-import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
-import { ShoppingBasket } from "@mui/icons-material";
-export const Hotel = () => {
+export const Service = () => {
   const hotel = [
     {
       id: "1",
@@ -52,7 +50,7 @@ export const Hotel = () => {
             <img
               src="https://imgmedia.larepublica.pe/640x371/larepublica/original/2022/06/20/62b0c33777e3d83239159a6a.webp"
               alt=""
-              srcset=""
+              srcSet=""
             />
           </Grid>
           <Grid item sm={6} md={8} sx={{ p: 4 }}>

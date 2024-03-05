@@ -1,5 +1,5 @@
-import React from 'react'
-import { ServiceList } from '../list/ServiceList'
+
+import { ServiceList } from "./servicesComponents/ServiceList"
 
 const HotelRent = () => {
   return (

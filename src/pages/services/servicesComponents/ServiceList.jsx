@@ -1,9 +1,8 @@
-import React from "react";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import Card2 from "../../components/Card2";
-import { Container, Grid, Typography } from "@mui/material";
-export const ServiceList= (listados) => {
+import Header from "../../../components/Header";
+import Footer from "../../../components/Footer";
+import Card2 from "../../../components/Card2";
+import { Container, Grid } from "@mui/material";
+export const ServiceList = (listados) => {
   const service = [
     {
       id: "1",
@@ -95,6 +94,7 @@ export const ServiceList= (listados) => {
       xs={12}
       sm={6}
       md={3}
+      key={data.id} 
       sx={{ mt: 2, display: "flex", justifyContent: "center" }}
     >
       <Card2 key={data.id} info={data} />

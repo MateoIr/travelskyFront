@@ -1,13 +1,11 @@
-import React from 'react'
-import { ServiceList } from '../list/ServiceList'
-
+import { ServiceList } from "./servicesComponents/ServiceList";
 
 const BusTikets = () => {
   return (
     <div>
       <ServiceList></ServiceList>
     </div>
-  )
-}
+  );
+};
 
-export default BusTikets
+export default BusTikets;

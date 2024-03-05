@@ -1,6 +1,5 @@
 import { ServiceList } from "./servicesComponents/ServiceList"
-
-const ExcursionTikets = () => {
+const PlaneTikets = () => {
   return (
     <>
       <ServiceList></ServiceList>
@@ -8,4 +7,4 @@ const ExcursionTikets = () => {
   );
 };
 
-export default ExcursionTikets;
+export default PlaneTikets;

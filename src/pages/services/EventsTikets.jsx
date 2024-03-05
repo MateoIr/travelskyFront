@@ -1,6 +1,4 @@
-import React from "react";
-import { Hotel } from "../hotel/Hotel";
-import { ServiceList } from "../list/ServiceList";
+import { ServiceList } from "./servicesComponents/ServiceList"
 
 const EventsTikets = () => {
   return (
