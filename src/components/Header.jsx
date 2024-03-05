@@ -11,7 +11,6 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
 
 const pages = ["Hoteles", "Pricing", "Blog"];
@@ -40,15 +39,20 @@ function Header() {
   };
 
   return (
-    <AppBar position="static" sx={{backgroundColor:"#ddabab"}}>
-      <Container maxWidth="xl" >
+    <AppBar position="static" sx={{ backgroundColor: "#ddabab" }}>
+      <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <Box sx={{ display: { xs: "none", md: "flex" }, width: 300 }}>
+            <img
+              src="/travelskyLogo.png"
+              sx={{ display: { xs: "none", md: "flex" }, height: 30, mr: 1 }}
+            />
+          </Box>
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -59,7 +63,7 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            TRAVSKY
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -98,12 +102,34 @@ function Header() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <Box
+            sx={{
+              display: { xs: "flex", md: "none" },
+              alignItems: "center",
+              justifyContent: "center",
+              width: 600,
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexFlow: "row-reverse",
+              }}
+            >
+              <img
+                src="/travelskyLogo.png"
+                sx={{ display: { xs: "none", md: "flex" }, height: 30, mr: 2 }}
+              />
+            </Box>
+          </Box>
+
           <Typography
-            variant="h5"
+            variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -115,7 +141,7 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            TRAVSKY
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
@@ -128,9 +154,24 @@ function Header() {
               </Button>
             ))}
           </Box>
-          <Box sx={{ flexGrow: 0 }} >
-            <Tooltip title="Open settings" sx={{display:"flex",alignItems:"center",justifyContent:"center", flexFlow:"row"}}>
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0,width:40}}>
+          <Box
+            sx={{
+              flexGrow: 0,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Tooltip
+              title="Open settings"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexFlow: "row",
+              }}
+            >
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0,width:40 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
