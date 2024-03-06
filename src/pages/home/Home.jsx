@@ -1,51 +1,57 @@
-import React from "react";
-import { Container, Grid } from "@mui/material";
-import ActionAreaCard from "../../components/Card1";
+import { Box, Container, Grid } from "@mui/material";
+import HomeServiceCard from "../../components/HomeServiceCard";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { Link } from "react-router-dom";
 export const Home = () => {
   const serviceList = [
     {
-      link: "/service/pasajes-de-colectivos",
+      id: 1,
+      link: "/service/bus-tikets",
       title: "Pasaje de colectivos",
-      img: "https://imgmedia.larepublica.pe/640x371/larepublica/original/2022/06/20/62b0c33777e3d83239159a6a.webp",
+      img: "https://images.unsplash.com/photo-1617479625255-43666e3a3509?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       desc: "pasajes al mejor precio xd",
     },
     {
-      link: "/service/pasajes-de-avion",
+      id: 2,
+      link: "/service/plane-tikts",
       title: "Pasaje de avión",
-      img: "https://imgmedia.larepublica.pe/640x371/larepublica/original/2022/06/20/62b0c33777e3d83239159a6a.webp",
+      img: "https://images.unsplash.com/photo-1499063078284-f78f7d89616a?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       desc: "pasajes al mejor precio xd",
     },
     {
-      link: "/service/pasajes-de-tren",
+      id: 3,
+      link: "/service/train-tikets",
       title: "Pasaje de tren",
-      img: "https://imgmedia.larepublica.pe/640x371/larepublica/original/2022/06/20/62b0c33777e3d83239159a6a.webp",
+      img: "https://images.unsplash.com/photo-1532105956626-9569c03602f6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       desc: "pasajes al mejor precio xd",
     },
     {
-      link: "/service/hoteles",
+      id: 4,
+      link: "/service/hotels",
       title: "Hoteles",
-      img: "https://www.clarin.com/img/2022/08/18/VceQyzGL3_1200x0__1.jpg",
+      img: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       desc: "Reserva hoteles re piolas",
     },
     {
-      link: "/service/alquiler-de-autos",
+      id: 5,
+      link: "/service/car-rent",
       title: "Alquiler de autos",
       img: "https://www.karvi.com.ar/blog/wp-content/uploads/2022/01/Cronos0-850x524.jpg",
       desc: "Los autos mas facheros que veras",
     },
     {
-      link: "/service/excursiones",
+      id: 6,
+      link: "/service/excursion",
       title: "Excursiones",
-      img: "https://imgmedia.larepublica.pe/640x371/larepublica/original/2022/06/20/62b0c33777e3d83239159a6a.webp",
+      img: "https://images.unsplash.com/photo-1621528833554-c7cc26249762?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       desc: "pasajes al mejor precio xd",
     },
     {
-      link: "/service/entradas-a-eventos",
+      id: 7,
+      link: "/service/events-tikets",
       title: "Entradas a eventos",
-      img: "https://www.aa.com/content/images/aadvantage-program/miles/redeem/redeem-miles-banner.jpg",
+      img: "https://images.unsplash.com/photo-1587407627257-27b7127c868c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       desc: "pasajes al mejor precio xd",
     },
   ];
@@ -53,32 +59,47 @@ export const Home = () => {
   const serviceForHeach = serviceList.map((data) => (
     <Grid
       item
-      md={6}
-      sm={12}
-      sx={{ mt: 2, display: "flex", justifyContent: "center" }}
+      sm={6}
+      xs={12}
+      sx={{
+        mt: 2,
+        display: "flex",
+        alignContent: "center",
+        justifyItems: "center",
+      }}
+      key={data.id}
     >
-      <Link to={data.link} >
-        <ActionAreaCard
-          info={{
-            title: data.title,
-            img: data.img,
-            desc: data.desc,
-          }}
-        />
-      </Link>
+      <Box sx={{ p: 2 }}>
+        <Link to={data.link}>
+          <HomeServiceCard
+            info={{
+              title: data.title,
+              img: data.img,
+              desc: data.desc,
+            }}
+          />
+        </Link>
+      </Box>
     </Grid>
   ));
-
-
 
   return (
     <>
       <Header />
-      <Container>
-        <Grid container spacing={3}>
-          {serviceForHeach}
-        </Grid>
-      </Container>
+
+      <Box
+        sx={{
+          backgroundImage:
+            "url(https://images.unsplash.com/photo-1575580280904-905f466584e0?q=80&w=2041&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
+          backgroundSize: "cover",
+        }}
+      >
+        <Box sx={{ backgroundColor: "#5e936564" }}>
+          <Container>
+            <Grid container>{serviceForHeach}</Grid>
+          </Container>
+        </Box>
+      </Box>
       <Footer />
     </>
   );

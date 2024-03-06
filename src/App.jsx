@@ -1,16 +1,22 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Home } from "./pages/home/Home";
-import { Hotel } from "./pages/hotel/Hotel";
 import UserCreate from "./pages/user/userCreate/UserCreate";
 import UserLogin from "./pages/user/userLogin/UserLogin";
+import BusTiketsList from "./pages/services/BusTiketsList";
+import TrainTiketsList from "./pages/services/TrainTiketsList";
+import PlaneTiketsList from "./pages/services/PlaneTiketsList";
+import CarRentList from "./pages/services/CarRentList";
+import ExcursionTiketsList from "./pages/services/ExcursionTiketsList";
+import EventsTiketsList from "./pages/services/EventsTiketsList";
+import HotelRentList from "./pages/services/HotelRentList";
 import BusTikets from "./pages/services/BusTikets";
-import TrainTikets from "./pages/services/TrainTikets";
-import PlainTikets from "./pages/services/PlainTikets";
+import HotelRent from "./pages/services/HotelRent";
 import CarRent from "./pages/services/CarRent";
+import PlaneTikets from "./pages/services/PlaneTikets";
+import TrainTikets from "./pages/services/TrainTikets";
 import ExcursionTikets from "./pages/services/ExcursionTikets";
 import EventsTikets from "./pages/services/EventsTikets";
-import HotelRent from "./pages/services/HotelRent";
 
 function App() {
   return (
@@ -18,20 +24,20 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        <Route path="/service/hoteles/:id" element={<Hotel />} />
-        <Route path="/service/hoteles" element={<HotelRent/>} />avion
-        <Route path="/service/lquiler-de-autos/:id" element={<Hotel />} />
-        <Route path="/service/alquiler-de-autos" element={<CarRent />} />
-        <Route path="/service/pasajes-de-colectivos/:id" element={<Hotel />} />
-        <Route path="/service/pasajes-de-colectivos" element={<BusTikets />} />
-        <Route path="/service/pasajes-de-avion/:id" element={<Hotel />} />
-        <Route path="/service/pasajes-de-avion" element={<PlainTikets />} />
-        <Route path="/service/pasajes-de-tren/:id" element={<Hotel />} />
-        <Route path="/service/pasajes-de-tren" element={<TrainTikets />} />
-        <Route path="/service/excursiones/:id" element={<Hotel />} />
-        <Route path="/service/excursiones" element={<ExcursionTikets />} />
-        <Route path="/service/entradas-a-eventos/:id" element={<Hotel />} />
-        <Route path="/service/entradas-a-eventos" element={<EventsTikets />} />
+        <Route path="/service/hotels/:id" element={<HotelRent />} />
+        <Route path="/service/hotels" element={<HotelRentList />} />
+        <Route path="/service/car-rent/:id" element={<CarRent />} />
+        <Route path="/service/car-rent" element={<CarRentList />} />
+        <Route path="/service/bus-tikets/:id" element={<BusTikets />} />
+        <Route path="/service/bus-tikets" element={<BusTiketsList />} />
+        <Route path="/service/plane-tikts/:id" element={<PlaneTikets />} />
+        <Route path="/service/plane-tikts" element={<PlaneTiketsList />} />
+        <Route path="/service/train-tikets/:id" element={<TrainTikets />} />
+        <Route path="/service/train-tikets" element={<TrainTiketsList />} />
+        <Route path="/service/excursion/:id" element={<ExcursionTikets />} />
+        <Route path="/service/excursion" element={<ExcursionTiketsList/>} />
+        <Route path="/service/events-tikets/:id" element={<EventsTikets />} />
+        <Route path="/service/events-tikets" element={<EventsTiketsList />} />
 
         <Route path="/user/register" element={<UserCreate />} />
         <Route path="/user/login" element={<UserLogin />} />

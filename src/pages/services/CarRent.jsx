@@ -1,12 +1,17 @@
-import React from 'react'
-import { ServiceList } from '../list/ServiceList'
+import { Service } from "./servicesComponents/Service";
 
 const CarRent = () => {
-  return (
-        <>
-        <ServiceList></ServiceList>
-        </>
-  )
-}
+  const information = [
+    {
+      id: "1",
+      img: "https://www.karvi.com.ar/blog/wp-content/uploads/2022/01/Cronos0-850x524.jpg",
+      imgDesc: "desx",
+      name: "Auto 1",
+      cost: "6000",
+      desc: "Auto 1 descrition",
+    },
+  ];
+  return <Service information={information} />;
+};
 
-export default CarRent
+export default CarRent;
