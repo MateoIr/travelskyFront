@@ -1,10 +1,8 @@
 import { Box, Container, Grid } from "@mui/material";
-import ActionAreaCard from "../../components/Card1";
+import HomeServiceCard from "../../components/HomeServiceCard";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { Link } from "react-router-dom";
-import ServiceIconList from "../../components/ServiceIconList";
-import Campo from "../../components/Campo";
 export const Home = () => {
   const serviceList = [
     {
@@ -73,7 +71,7 @@ export const Home = () => {
     >
       <Box sx={{ p: 2 }}>
         <Link to={data.link}>
-          <ActionAreaCard
+          <HomeServiceCard
             info={{
               title: data.title,
               img: data.img,

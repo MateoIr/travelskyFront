@@ -1,7 +1,7 @@
 import { ServiceList } from "./servicesComponents/ServiceList";
 
 const CarRent = () => {
-  const listado = [
+  const list = [
     {
       id: "1",
       img: "https://www.karvi.com.ar/blog/wp-content/uploads/2022/01/Cronos0-850x524.jpg",
@@ -51,11 +51,7 @@ const CarRent = () => {
       desc: "hotel 1 descrition",
     },
   ];
-  return (
-    <>
-      <ServiceList listado={listado}></ServiceList>
-    </>
-  );
+  return <ServiceList list={list} />;
 };
 
 export default CarRent;

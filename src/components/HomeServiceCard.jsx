@@ -5,7 +5,6 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 
 const styles = {
-  card: {},
   cardContent: {
     pl: 0,
     display: "flex",
@@ -16,7 +15,7 @@ const styles = {
   },
 };
 
-export default function Card1({ info }) {
+export default function HomeServiceCard({ info }) {
   return (
     <Card sx={styles.card}>
       <CardActionArea>

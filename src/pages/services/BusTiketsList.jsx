@@ -1,8 +1,7 @@
 import { ServiceList } from "./servicesComponents/ServiceList";
 
 const BusTikets = () => {
-
-  const listado = [
+  const list = [
     {
       id: "1",
       img: "https://imgmedia.larepublica.pe/640x371/larepublica/original/2022/06/20/62b0c33777e3d83239159a6a.webp",
@@ -52,11 +51,7 @@ const BusTikets = () => {
       desc: "hotel 1 descrition",
     },
   ];
-  return (
-    <div>
-      <ServiceList listado={listado}></ServiceList>
-    </div>
-  );
+  return <ServiceList list={list} />;
 };
 
 export default BusTikets;

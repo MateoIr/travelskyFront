@@ -11,11 +11,7 @@ const HotelRent = () => {
       desc: "hotel 1 descrition",
     },
   ];
-  return (
-    <div>
-      <Service information={information}></Service>
-    </div>
-  );
+  return <Service information={information} />;
 };
 
 export default HotelRent;
