@@ -1,4 +1,3 @@
-import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -6,16 +5,14 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 
 const styles = {
-  card: {
-    maxWidth: 600,
-    maxHeight: "auto",
-  },
+  card: {},
   cardContent: {
     pl: 0,
     display: "flex",
     flexFlow: "column",
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "#EAE4FA",
   },
 };
 

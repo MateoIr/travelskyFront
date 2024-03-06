@@ -1,110 +1,29 @@
+
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
 import Card2 from "../../../components/Card2";
 import { Container, Grid } from "@mui/material";
-export const ServiceList = (listados) => {
-  const service = [
-    {
-      id: "1",
-      img: "https://imgmedia.larepublica.pe/640x371/larepublica/original/2022/06/20/62b0c33777e3d83239159a6a.webp",
-      imgDesc: "desx",
-      name: "Hotel 1",
-      cost: "6000",
-      desc: "hotel 1 descrition",
-    },
-    {
-      id: "2",
-      img: "https://imgmedia.larepublica.pe/640x371/larepublica/original/2022/06/20/62b0c33777e3d83239159a6a.webp",
-      imgDesc: "desx",
-      name: "Hotel 1",
-      cost: "6000",
-      desc: "hotel 1 descrition",
-    },
-    {
-      id: "3",
-      img: "https://imgmedia.larepublica.pe/640x371/larepublica/original/2022/06/20/62b0c33777e3d83239159a6a.webp",
-      imgDesc: "desx",
-      name: "Hotel 1",
-      cost: "6000",
-      desc: "hotel 1 descrition",
-    },
-    {
-      id: "4",
-      img: "https://imgmedia.larepublica.pe/640x371/larepublica/original/2022/06/20/62b0c33777e3d83239159a6a.webp",
-      imgDesc: "desx",
-      name: "Hotel 1",
-      cost: "6000",
-      desc: "hotel 1 descrition",
-    },
 
-    {
-      id: "5",
-      img: "https://imgmedia.larepublica.pe/640x371/larepublica/original/2022/06/20/62b0c33777e3d83239159a6a.webp",
-      imgDesc: "desx",
-      name: "Hotel 1",
-      cost: "6000",
-      desc: "hotel 1 descrition",
-    },
-    {
-      id: "6",
-      img: "https://imgmedia.larepublica.pe/640x371/larepublica/original/2022/06/20/62b0c33777e3d83239159a6a.webp",
-      imgDesc: "desx",
-      name: "Hotel 1",
-      cost: "6000",
-      desc: "hotel 1 descrition",
-    },
-    {
-      id: "7",
-      img: "https://imgmedia.larepublica.pe/640x371/larepublica/original/2022/06/20/62b0c33777e3d83239159a6a.webp",
-      imgDesc: "desx",
-      name: "Hotel 1",
-      cost: "6000",
-      desc: "hotel 1 descrition",
-    },
-    {
-      id: "8",
-      img: "https://imgmedia.larepublica.pe/640x371/larepublica/original/2022/06/20/62b0c33777e3d83239159a6a.webp",
-      imgDesc: "desx",
-      name: "Hotel 1",
-      cost: "6000",
-      desc: "hotel 1 descrition",
-    },
-    {
-      id: "9",
-      img: "https://imgmedia.larepublica.pe/640x371/larepublica/original/2022/06/20/62b0c33777e3d83239159a6a.webp",
-      imgDesc: "desx",
-      name: "Hotel 1",
-      cost: "6000",
-      desc: "hotel 1 descrition",
-    },
-    {
-      id: "10",
-      img: "https://imgmedia.larepublica.pe/640x371/larepublica/original/2022/06/20/62b0c33777e3d83239159a6a.webp",
-      imgDesc: "desx",
-      name: "Hotel 1",
-      cost: "6000",
-      desc: "hotel 1 descrition",
-    },
-  ];
-
-  console.log(listados);
-  const serviceForHeach = service.map((data) => (
+export const ServiceList = ({listado}) => {
+ 
+  // eslint-disable-next-line react/prop-types
+  const serviceForHeach = listado.map((data) => (
     <Grid
       item
       xs={12}
       sm={6}
       md={3}
       key={data.id} 
-      sx={{ mt: 2, display: "flex", justifyContent: "center" }}
+      sx={{ mt: 2, display: "flex", justifyContent: "center",p:1 }}
     >
-      <Card2 key={data.id} info={data} />
+      <Card2 key={data.id} info={data}/>
     </Grid>
   ));
   return (
     <>
       <Header />
       <Container>
-        <Grid container spacing={1} sx={{ padding: 8 }}>
+        <Grid container spacing={0} sx={{ padding: 6 }}>
           {serviceForHeach}
         </Grid>
       </Container>

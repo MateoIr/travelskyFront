@@ -3,14 +3,20 @@ import "./App.css";
 import { Home } from "./pages/home/Home";
 import UserCreate from "./pages/user/userCreate/UserCreate";
 import UserLogin from "./pages/user/userLogin/UserLogin";
+import BusTiketsList from "./pages/services/BusTiketsList";
+import TrainTiketsList from "./pages/services/TrainTiketsList";
+import PlaneTiketsList from "./pages/services/PlaneTiketsList";
+import CarRentList from "./pages/services/CarRentList";
+import ExcursionTiketsList from "./pages/services/ExcursionTiketsList";
+import EventsTiketsList from "./pages/services/EventsTiketsList";
+import HotelRentList from "./pages/services/HotelRentList";
 import BusTikets from "./pages/services/BusTikets";
-import TrainTikets from "./pages/services/TrainTikets";
-import PlaneTikets from "./pages/services/PlaneTikets";
+import HotelRent from "./pages/services/HotelRent";
 import CarRent from "./pages/services/CarRent";
+import PlaneTikets from "./pages/services/PlaneTikets";
+import TrainTikets from "./pages/services/TrainTikets";
 import ExcursionTikets from "./pages/services/ExcursionTikets";
 import EventsTikets from "./pages/services/EventsTikets";
-import HotelRent from "./pages/services/HotelRent";
-import { Service } from "./pages/services/servicesComponents/Service";
 
 function App() {
   return (
@@ -18,20 +24,20 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        <Route path="/service/hotels/:id" element={<Service/>} />
-        <Route path="/service/hotels" element={<HotelRent/>} />
-        <Route path="/service/car-rent/:id" element={<Service />} />
-        <Route path="/service/car-rent" element={<CarRent />} />
-        <Route path="/service/bus-tikets/:id" element={<Service />} />
-        <Route path="/service/bus-tikets" element={<BusTikets />} />
-        <Route path="/service/plane-tikts/:id" element={<Service />} />
-        <Route path="/service/plane-tikts" element={<PlaneTikets />} />
-        <Route path="/service/train-tikets/:id" element={<Service />} />
-        <Route path="/service/train-tikets" element={<TrainTikets />} />
-        <Route path="/service/excursion/:id" element={<Service />} />
-        <Route path="/service/excursion" element={<ExcursionTikets />} />
-        <Route path="/service/events-tikets/:id" element={<Service />} />
-        <Route path="/service/events-tikets" element={<EventsTikets />} />
+        <Route path="/service/hotels/:id" element={<HotelRent />} />
+        <Route path="/service/hotels" element={<HotelRentList />} />
+        <Route path="/service/car-rent/:id" element={<CarRent />} />
+        <Route path="/service/car-rent" element={<CarRentList />} />
+        <Route path="/service/bus-tikets/:id" element={<BusTikets />} />
+        <Route path="/service/bus-tikets" element={<BusTiketsList />} />
+        <Route path="/service/plane-tikts/:id" element={<PlaneTikets />} />
+        <Route path="/service/plane-tikts" element={<PlaneTiketsList />} />
+        <Route path="/service/train-tikets/:id" element={<TrainTikets />} />
+        <Route path="/service/train-tikets" element={<TrainTiketsList />} />
+        <Route path="/service/excursion/:id" element={<ExcursionTikets />} />
+        <Route path="/service/excursion" element={<ExcursionTiketsList/>} />
+        <Route path="/service/events-tikets/:id" element={<EventsTikets />} />
+        <Route path="/service/events-tikets" element={<EventsTiketsList />} />
 
         <Route path="/user/register" element={<UserCreate />} />
         <Route path="/user/login" element={<UserLogin />} />
