@@ -17,6 +17,7 @@ import PlaneTikets from "./pages/services/PlaneTikets";
 import TrainTikets from "./pages/services/TrainTikets";
 import ExcursionTikets from "./pages/services/ExcursionTikets";
 import EventsTikets from "./pages/services/EventsTikets";
+import EmployeeCreate from "./pages/user/userCreate/EmployeeCreate";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
         <Route path="/service/events-tikets" element={<EventsTiketsList />} />
 
         <Route path="/user/register" element={<UserCreate />} />
+        <Route path="/user/register/employee" element={<EmployeeCreate/>} />
         <Route path="/user/login" element={<UserLogin />} />
       </Routes>
     </BrowserRouter>

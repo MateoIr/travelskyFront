@@ -1,7 +1,11 @@
+import FetchComponent from "../../hooks/Fetch";
+
 import { Service } from "./servicesComponents/Service";
 
 const CarRent = () => {
-  const information = [
+  const information = FetchComponent("servicios");
+  console.log(information);
+  const information2 = [
     {
       id: "1",
       img: "https://www.karvi.com.ar/blog/wp-content/uploads/2022/01/Cronos0-850x524.jpg",

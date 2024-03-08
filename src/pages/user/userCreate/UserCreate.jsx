@@ -1,10 +1,10 @@
 import { Box, Button, Container, TextField, Typography } from "@mui/material";
-import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import userValidationYup from "../../../hooks/userValidationYup";
-const UserCreate = () => {
- 
+
+
+const UserCreate = ({employee}) => {
   const {
     register,
     handleSubmit,
@@ -12,6 +12,8 @@ const UserCreate = () => {
   } = useForm({
     resolver: yupResolver(userValidationYup()),
   });
+  
+
 
   const onSubmit = (data) => {
     const person = {
@@ -20,7 +22,8 @@ const UserCreate = () => {
       birthdate: data.birthdate,
       address: data.address,
       nationality: data.nationality,
-
+      salary: data.salaryEmployee,
+      post: data.postEmployee,
       user: {
         u_name: data.user_name,
         u_contrasena: data.password,
@@ -165,6 +168,34 @@ const UserCreate = () => {
           {errors.confirmPassword?.message}
         </Typography>
 
+        <TextField
+        sx={{display:(employee!= undefined)? "flex":"none"}}
+          id="postEmployee"
+          label="Cargo del empleado"puesto
+          type="text"
+          variant="standard"
+          fullWidth
+          {...register("postEmployee")}
+          error={errors.postEmployee?.message}
+        />
+        <Typography textAlign={"center"}>
+          {errors.postEmployee?.message}
+        </Typography>
+        
+        
+        <TextField
+          sx={{display:(employee!= undefined)? "flex":"none"}}
+          id="salaryEmployee"
+          label="Sueldo del empleado"
+          type="text"
+          variant="standard"
+          fullWidth
+          {...register("salaryEmployee")}
+          error={errors.salaryEmployee?.message}
+        />
+        <Typography textAlign={"center"}>
+          {errors.salaryEmployee?.message}
+        </Typography>
         <Typography textAlign={"left"} sx={{ mt: 2 }}>
           Fecha de nacimineto
         </Typography>
